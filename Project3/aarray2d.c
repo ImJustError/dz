@@ -9,6 +9,11 @@ array2d CreateMass(int str, int col) {
 	mass1.array = malloc(str * sizeof(int*));
 	int* mass2 = malloc(str * col * sizeof(int));
 
+	if (!mass1.array||!mass2) {
+		printf("error");
+		return;
+	} 
+
 	int* tmp = mass2;
 	for (int i = 0; i < str; i++) {
 		mass1.array[i] = mass2;
